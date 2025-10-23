@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <style>
+      html {
+          cursor: url("https://i.imgur.com/8Jhi9oS.png"), auto;
+      }
+  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rialo Typing Rush By Biswa FF</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --neon-cyan:#00f0ff;
+      --neon-pink:#ff2d95;
+    }
+    * { box-sizing:border-box; }
+    html, body {
+      margin:0; height:100%;
+      font-family:'Orbitron',sans-serif;
+      background:#000; color:#e7f6ff;
+      overflow:hidden;
+    }
+
+    body::before {
+      content:"";
+      position:fixed; inset:0;
+      background-image: url("https://i.im.ge/2025/10/11/nxLyFJ.1994.jpeg");
+      background-size:cover;
+      background-position:center;
+      background-attachment:fixed;
+      filter:contrast(1.05) saturate(1.1) brightness(0.6);
+      z-index:0;
+    }
+
+    .container {
+      position:relative; z-index:2;
+      min-height:100vh;
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      padding:28px;
+    }
+
+    /* Sound Button */
+    .sound-btn {
+      position:absolute;
+      top:20px;
+      right:20px;
+      width:46px;
+      height:46px;
+      border:none;
+      border-radius:50%;
+      background:linear-gradient(135deg,var(--neon-cyan),var(--neon-pink));
+      color:#021;
+      font-size:22px;
+      cursor:pointer;
+      box-shadow:0 0 12px var(--neon-cyan), 0 0 20px var(--neon-pink);
+      transition:transform .2s;
+    }
+    .sound-btn:hover { transform:scale(1.1); }
+
+    .logo {
+      width:120px; height:120px;
+      border-radius:20px;
+      background:linear-gradient(135deg,var(--neon-),var(--neon-pink));
+      display:flex; align-items:center; justify-content:center;
+      box-shadow:0 0 30px rgba(255,45,149,0.4);
+      margin-bottom:20px;
+    }
+    .logo img {
+      width:100%; height:100%; object-fit:contain;
+      filter:drop-shadow(0 0 8px var(--black)) drop-shadow(0 0 16px var(--neon-pink));
+      border-radius:16px;
+    }
+
+    .card {
+      width:980px; max-width:96vw;
+      background:rgba(0,0,0,0.4);
+      border-radius:20px;
+      padding:24px;
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:0 20px 60px rgba(0,0,0,0.8);
+      backdrop-filter:blur(8px);
+      text-align:center;
+    }
+
+    h1 { 
+      font-family:'Press Start 2P',monospace;
+      font-size:18px; margin:0; 
+      color:var(--neon-pink); 
+      text-shadow:0 0 16px rgba(255,45,149,0.25); 
+    }
+    p.lead { margin:6px 0 16px; color:#9fdcff; font-size:13px; }
+
+    .track {
+      height:150px; display:flex; align-items:center; justify-content:flex-start; overflow:hidden; position:relative;
+    }
+
+    .word {
+      font-family:'Press Start 2P',monospace;
+      font-size:40px; padding:12px 18px;
+      border-radius:10px;
+      color:#031;
+      background:linear-gradient(90deg,var(--neon-cyan),var(--neon-pink));
+      text-shadow:0 8px 20px rgba(0,0,0,0.45);
+      box-shadow:0 10px 40px rgba(0,0,0,0.6);
+    }
+
+    input[type=text] {
+      width:100%; padding:12px 14px;
+      border-radius:10px; border:1px solid rgba(255,255,255,0.06);
+      background:rgba(0,0,0,0.5); color:#eafcff; font-size:16px;
+    }
+    sajal.btn   {
+    padding: 30px 16px;
+    border-radius: 10px;
+    border: none;
+    /* Diagonal gradient with high-contrast, vivid colors */
+    background: linear-gradient(45deg, #FF33A1, #00CFFF, #B5FF33);
+    color: #ffffff;
+    font-family: 'Press Start 2P', monospace;
+    cursor: pointer;
+    /* Subtle shadow enhancement */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    transition: transform .2s;
+}
+    button.btn {
+    padding: 30px 16px;
+    border-radius: 10px;
+    border: none;
+    /* Use vibrant colors for a "colorful" effect */
+    --color1: #ff00cc;  /* Magenta */
+    --color2: #33ccff;  /* Cyan */
+    --color3: #ffcc00;  /* Yellow-Orange */
+    background: linear-gradient(90deg, var(--color1), var(--color2), var(--color3));
+    color: #ffffff;
+    font-family: 'Press Start 2P', monospace;
+    cursor: pointer;
+    /* Adjusted shadow for a bit more pop */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    transition: transform .2s;
+    }
+    button.btn:hover { transform:scale(1.03); }
+
+    #leaderboard {
+      margin-top:20px;
+      background:rgba(0,0,0,0.35);
+      border-radius:12px;
+      padding:16px 20px;
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:0 0 30px rgba(0,255,255,0.1);
+    }
+
+    #leaderboard h2 {
+      text-align:center;
+      color:var(--neon-cyan);
+      font-size:18px;
+      margin-bottom:10px;
+      text-shadow:0 0 10px var(--neon-pink);
+    }
+
+    #leaderboard ol {
+      list-style:none; padding:0; margin:0;
+      display:flex; flex-direction:column; gap:8px;
+    }
+
+    #leaderboard li {
+      display:flex; justify-content:space-between; align-items:center;
+      background:rgba(255,255,255,0.05);
+      padding:10px 14px;
+      border-radius:8px;
+      font-family:'Orbitron',sans-serif;
+      color:var(--neon-cyan);
+      box-shadow:0 0 8px rgba(0,255,255,0.1);
+    }
+
+    .rank-badge {
+      font-size:14px; padding:4px 10px; border-radius:6px;
+      font-weight:bold; text-shadow:0 0 6px rgba(255,255,255,0.8);
+    }
+
+    .gold { background:linear-gradient(90deg,#ffde59,#ffcc00); color:#2b2b00; box-shadow:0 0 10px #ffde59; }
+    .silver { background:linear-gradient(90deg,#e0e0e0,#bdbdbd); color:#222; box-shadow:0 0 10px #e0e0e0; }
+    .bronze { background:linear-gradient(90deg,#d79771,#b87333); color:#2b1500; box-shadow:0 0 10px #d79771; }
+
+    .combo-text {
+      position:fixed; top:50%; left:50%;
+      transform:translate(-50%,-50%);
+      font-family:'Press Start 2P',monospace;
+      color:var(--neon-cyan);
+      text-shadow:0 0 10px var(--neon-cyan),0 0 20px var(--neon-pink);
+      opacity:0; animation:comboFlash 1s ease-out forwards;
+      pointer-events:none; z-index:40;
+    }
+    @keyframes comboFlash {
+      0% {opacity:1;transform:translate(-50%,-50%) scale(1);}
+      100% {opacity:0;transform:translate(-50%,-50%) scale(1.25);}
+    }
+    .flash-screen {
+      position:fixed; top:0; left:0; width:100%; height:100%;
+      background:radial-gradient(circle at center, rgba(0,255,255,0.45), rgba(255,45,149,0.12), transparent 70%);
+      opacity:0; z-index:30; animation:flashPulse 0.6s ease-out forwards;
+    }
+    @keyframes flashPulse {0%{opacity:0.9;}100%{opacity:0;}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button id="soundBtn" class="sound-btn">🔊</button>
+
+    <div class="logo">
+      <img src="https://i.im.ge/2025/10/09/nCzUj9.bird2.png" alt="Logo">
+    </div>
+
+    <div class="card" id="gameCard">
+      <h1><marquee><b><font color="white">Rialo Typing Rush</font></b></marquee></h1>
+      <p class="lead">Type the word in 5 seconds — Press Enter or Space to confirm.</p>
+      <p class="lead"><font color="red"><b>Made By Biswa FF</b></font></p>
+      <div id="track" class="track"></div>
+      <input id="txt" type="text" placeholder="Type here..." autocomplete="off" />
+
+    
+      <div style="display:flex;gap:12px;justify-content:center;margin-top:14px;">
+        <div id="score" style="font-size:18px;">Score: 0</div>
+        <div id="time" style="font-size:18px;">Time: 60s</div>
+      </div>
+      <button id="startBtn" class="btn" style="width:100%;margin-top:20px;">START GAME</button>
+
+      
+      <button id="confirm" class="sajal.btn" style="margin-top:10px;">ENTER / SPACE</button>
+
+
+
+
+  <script>
+    const API_URL = "https://68e0cd5b93207c4b47956bb3.mockapi.io/leaderboard"; // 🔴 Thay link MockAPI của bạn
+
+    const WORDS=['grialo','Club-member','Chase','Alan','Arrow','Rialorca','crypto','near','zksync','subzero','trust','oracle','speed','privacy','layer','Sajal','faster','jasper','chase','future','Biswa'];
+    const TOTAL_TIME=60, ROUND_TIME=5;
+
+    const txt=document.getElementById('txt'),track=document.getElementById('track'),
+    scoreEl=document.getElementById('score'),timeEl=document.getElementById('time'),
+    startBtn=document.getElementById('startBtn'),confirmBtn=document.getElementById('confirm'),
+    leaderboardEl=document.querySelector('#leaderboard ol'),soundBtn=document.getElementById('soundBtn'),
+    gameCard=document.getElementById('gameCard');
+
+    let score=0,timeLeft=TOTAL_TIME,roundTimer=null,gameTimer=null,currentWord='',playing=false,combo=1,soundOn=true;
+    let audioCtx=null, roundSpeed=ROUND_TIME;
+
+    function initAudio(){if(audioCtx)return;audioCtx=new(window.AudioContext||window.webkitAudioContext)();}
+    function playTone(f,d=0.15,v=0.08){if(!soundOn||!audioCtx)return;const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='sine';o.frequency.value=f;g.gain.value=v;o.connect(g).connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+d);}
+    function playCorrect(){playTone(880,0.18,0.12);playTone(1320,0.12,0.08);}
+    function playWrong(){playTone(160,0.3,0.08);}
+    function playCombo(l){playTone(600+Math.min(l,8)*90,0.16,0.12);}
+    function triggerFlash(){const f=document.createElement('div');f.className='flash-screen';document.body.appendChild(f);setTimeout(()=>f.remove(),600);}
+    function showCombo(){if(combo<=1)return;const c=document.createElement('div');c.className='combo-text';c.textContent=`COMBO ×${combo}!`;c.style.fontSize=`${28+combo*4}px`;gameCard.appendChild(c);setTimeout(()=>c.remove(),1000);}
+    function randWord(){return WORDS[Math.floor(Math.random()*WORDS.length)];}
+    function showWord(w){track.innerHTML='';const el=document.createElement('div');el.className='word';el.textContent=w;el.style.position='absolute';el.style.left='100%';el.style.top='50%';el.style.transform='translateY(-50%)';track.appendChild(el);setTimeout(()=>{el.style.transition=`left ${roundSpeed}s linear`;el.style.left='-260px';},30);}
+    
+    function startRound(){
+      currentWord=randWord();
+      showWord(currentWord);
+      if(roundTimer)clearTimeout(roundTimer);
+      roundTimer=setTimeout(()=>{combo=1;playWrong();triggerFlash();startRound();},roundSpeed*1000);
+      txt.value='';txt.focus();
+      roundSpeed=Math.max(1, roundSpeed*0.97); // tăng tốc 3% mỗi lần, min 1s
+    }
+
+    function confirmInput(){
+      if(!playing)return;
+      const v=txt.value.trim(); if(!v)return;
+      const ok=v.toLowerCase()===currentWord.toLowerCase();
+      if(ok){playCorrect();triggerFlash();showCombo();playCombo(combo);score+=combo;combo++;}
+      else{playWrong();triggerFlash();combo=1;}
+      scoreEl.textContent=`Score: ${score}`;
+      if(roundTimer)clearTimeout(roundTimer);
+      startRound();
+    }
+
+    function startGame(){
+      if(playing)return;
+      playing=true;score=0;combo=1;timeLeft=TOTAL_TIME;roundSpeed=ROUND_TIME;
+      scoreEl.textContent='Score: 0';timeEl.textContent='Time: 60s';
+      if(!audioCtx)initAudio();
+      gameTimer=setInterval(()=>{timeLeft--;timeEl.textContent=`Time: ${timeLeft}s`;if(timeLeft<=0)endGame();},1000);
+      startRound();
+    }
+
+    async function endGame(){
+      playing=false;clearInterval(gameTimer);clearTimeout(roundTimer);
+      const name=prompt(`Time up!\nYour score: ${score}\nEnter your name:`,'PLAYER')||'PLAYER';
+      // Lưu điểm lên MockAPI
+      await fetch(API_URL, {
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({name,score})
+      });
+      await renderLeaderboard();
+      alert(`Game Over! Score: ${score}`);
+    }
+
+    async function renderLeaderboard(){
+      const res=await fetch(API_URL);
+      let lb=await res.json();
+      lb.sort((a,b)=>b.score-a.score);
+      leaderboardEl.innerHTML='';
+      lb.slice(0,10).forEach((r,i)=>{
+        const li=document.createElement('li');
+        let badge='';
+        if(i===0)badge='<span class="rank-badge gold">🥇</span>';
+        else if(i===1)badge='<span class="rank-badge silver">🥈</span>';
+        else if(i===2)badge='<span class="rank-badge bronze">🥉</span>';
+        else badge=`<span class="rank-badge" style="color:var(--neon-cyan)">#${i+1}</span>`;
+        li.innerHTML=`${badge} <span>${r.name}</span> <span><b>${r.score}</b></span>`;
+        leaderboardEl.appendChild(li);
+      });
+    }
+
+    confirmBtn.onclick=confirmInput;
+    txt.addEventListener('keydown',e=>{if(e.code==='Enter'||e.code==='Space'){e.preventDefault();confirmInput();}});
+    startBtn.onclick=startGame;
+    soundBtn.onclick=()=>{soundOn=!soundOn;soundBtn.textContent=soundOn?'🔊':'🔇';};
+    window.onload=renderLeaderboard;
+  </script>
+</body>
+</html>
